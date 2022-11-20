@@ -1,5 +1,7 @@
 jQuery(document).ready(function(){
-	jQuery('#data').DataTable();
+	jQuery('#data').DataTable({
+        scrollX: true,
+    });
 });
 
 

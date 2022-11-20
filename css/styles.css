@@ -4,6 +4,9 @@
     border-collapse: collapse;
     padding: 10px 15px;
 }
+.overflow-scroll-x{
+    overflow-x: scroll !important;
+}
 
 .infotable {
     width: 100%;

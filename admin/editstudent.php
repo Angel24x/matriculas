@@ -14,6 +14,9 @@
   if (isset($_POST['updatestudent'])) {
   	$name = $_POST['name'];
   	$roll = $_POST['roll'];
+  	$edad = $_POST['edad'];
+  	$representante = $_POST['representante'];
+  	$sexo = $_POST['sexo'];
   	$address = $_POST['address'];
   	$pcontact = $_POST['pcontact'];
   	$class = $_POST['class'];
@@ -27,7 +30,7 @@
   		$photo = $oldPhoto;
   	}
   	
-  	$query = "UPDATE student_info SET name='$name', roll='$roll', class='$class', city='$address', pcontact='$pcontact', photo='$photo' WHERE id=$id";
+  	$query = "UPDATE student_info SET name='$name', roll='$roll', class='$class',edad='$edad',representante='$representante', sexo='$sexo',city='$address', pcontact='$pcontact', photo='$photo' WHERE id=$id";
   	if (mysqli_query($db_con,$query)) {
   		$datainsert['insertsucess'] = '<p style="color: green;">Student Updated!</p>';
 		if (!empty($_FILES['photo']['name'])) {
@@ -51,7 +54,7 @@
 
 	<?php
 		if (isset($id)) {
-			$query = "SELECT `id`, `name`, `roll`, `class`, `city`, `pcontact`, `photo`, `datetime` FROM `student_info` WHERE `id`=$id";
+			$query = "SELECT * FROM `student_info` WHERE `id`=$id";
 			$result = mysqli_query($db_con,$query);
 			$row = mysqli_fetch_array($result);
 		}
@@ -67,6 +70,21 @@
 		    <label for="roll">Número de Matrícula</label>
 		    <input name="roll" type="text" class="form-control" pattern="[0-9]{8}" id="roll" value="<?php echo $row['roll']; ?>" required="">
 	  	</div>
+		  <div class="form-group">
+		    <label for="edad">Edad del estudiante </label>
+		    <input name="edad" type="text" class="form-control" pattern="[0-9]{1,2}" id="edad" value="<?php echo $row['edad']; ?>" required="" maxlength="2">
+	  	</div>
+		  <div class="form-group">
+		    <label for="representante">Representante de Estudiante</label>
+		    <input name="representante" type="text" class="form-control" id="representante" value="<?php echo $row['representante']; ?>" required="" maxlength="20">
+	  	</div>
+		  <div class="form-group">
+		    <label for="class">Sexo</label>
+		    <select name="sexo" class="form-control" id="sexo" required="" value="">
+		    	<option value="F" <?= $row['sexo']=='F'? 'selected':'' ?>>Femenino</option>
+				<option value="M" <?= $row['sexo']=='M'? 'selected':'' ?>>Masculino</option>
+		    </select>
+	  	</div>
 	  	<div class="form-group">
 		    <label for="address">Dirección de Estudiante</label>
 		    <input name="address" type="text" class="form-control" id="address" value="<?php echo $row['city']; ?>" required="">
@@ -78,7 +96,6 @@
 	  	<div class="form-group">
 		    <label for="class">Grado</label>
 		    <select name="class" class="form-control" id="class" required="" value="">
-		    	<option>Select</option>
 		    	<option value="Primero A" <?= $row['class']=='Primero A'? 'selected':'' ?>>Primero A</option>
 				<option value="Primero B" <?= $row['class']=='Primero B'? 'selected':'' ?>>Primero B</option>
 		    	<option value="Segundo A" <?= $row['class']=='Segundo A'? 'selected':'' ?>>Segundo A</option>

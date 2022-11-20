@@ -72,7 +72,22 @@
 	  	
 	  	<div class="form-group">
 		    <label for="roll">Número de Matrícula</label>
-		    <input name="roll" type="text" value="<?= isset($roll)? $roll: '' ; ?>" class="form-control" pattern="[0-9]{8}" id="roll" required="">
+		    <input name="roll" type="text" value="<?= isset($roll)? $roll: '' ; ?>" class="form-control" pattern="[0-9]{8}" id="roll" required="" maxlength="8">
+	  	</div>
+		  <div class="form-group">
+		    <label for="edad">Edad del estudiante </label>
+		    <input name="edad" type="text" class="form-control" pattern="[0-9]{1,2}" id="edad" value="<?= isset($edad)? $edad: '' ; ?>"  required="" maxlength="2">
+	  	</div>
+		  <div class="form-group">
+		    <label for="representante">Representante de Estudiante</label>
+		    <input name="representante" type="text" class="form-control" id="representante" value="<?= isset($representante)? $representante: '' ; ?>"  required="" maxlength="20">
+	  	</div>
+		  <div class="form-group">
+		    <label for="class">Sexo</label>
+		    <select name="sexo" class="form-control" id="sexo" required="" value="">
+		    	<option value="F">Femenino</option>
+				<option value="M">Masculino</option>
+		    </select>
 	  	</div>
 	  	<div class="form-group">
 		    <label for="address">Dirección de Estudiante</label>
@@ -80,12 +95,11 @@
 	  	</div>
 	  	<div class="form-group">
 		    <label for="pcontact">Teléfono de Contacto</label>
-		    <input name="pcontact" type="text" class="form-control" id="pcontact" pattern="[0-9]{10,11}" value="<?= isset($pcontact)? $pcontact: '' ; ?>" placeholder="+58........." required="">
+		    <input name="pcontact" type="text" class="form-control" id="pcontact" pattern="[0-9]{10,11}" value="<?= isset($pcontact)? $pcontact: '' ; ?>" placeholder="+58........." required="" maxlength="11">
 	  	</div>
 	  	<div class="form-group">
 		    <label for="class">Grado Estudiantil</label>
 		    <select name="class" class="form-control" id="class" required="">
-		    	<option>Selecciona</option>
 		    	<option value="Primero A">Primero A</option>
 				<option value="Primero B">Primero B</option>
 		    	<option value="Segundo A">Segundo A</option>
@@ -98,23 +112,6 @@
 				<option value="Quinto B">Quinto B</option>
 		    	<option value="Sexto A">Sexto A</option>
 				<option value="Sexto B">Sexto B</option>
-		    </select>
-	  	</div>
-		  <div class="form-group">
-		    <label for="edad">edad</label>
-		    <input name="edad" type="number" value="<?= isset($edad)? $edad: '' ; ?>" class="form-control" pattern="[0-9]{2}" id="edad" required="">
-	  	</div>
-		  <div class="form-group">
-		    <label for="representante">representante</label>
-		    <input name="representante" type="text" value="<?= isset($edad)? $edad: '' ; ?>" class="form-control" pattern="[0-9]{2}" id="edad" required="">
-	  	</div>
-		  <div class="form-group">
-		    <label for="class">Sexo</label>
-		    <select name="sexo" class="form-control" id="sexo" required="">
-		    	<option>Selecciona</option>
-		    	<option value="M">Masculino</option>
-		    	<option value="F">Femenino</option>
-				
 		    </select>
 	  	</div>
 	  	<div class="form-group">

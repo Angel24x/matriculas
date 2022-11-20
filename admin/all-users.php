@@ -39,7 +39,14 @@
           <td>'.$result['email'].'</td>
           <td>'.ucwords($result['username']).'</td>
           <td><img src="images/'.$result['photo'].'" height="50px"></td>
-          <td>'.$result['status'].'</td>';?>
+          <td>'.$result['status'].'</td>'.
+          '<td>
+            <a class="btn btn-xs btn-warning" href="index.php?page=edituser&id='.$result['id'].'">
+              <i class="fa fa-edit"></i></a>
+
+             &nbsp; <a class="btn btn-xs btn-danger" onclick="javascript:confirmationDelete($(this));return false;" href="index.php?page=deleteuser&id='.($result['id']).'">
+             <i class="fas fa-trash-alt"></i></a></td>'
+          ?>
       </tr>  
      <?php $i++;} ?>
     
@@ -48,7 +55,7 @@
 <script type="text/javascript">
   function confirmationDelete(anchor)
 {
-   var conf = confirm('Are you sure want to delete this record?');
+   var conf = confirm('Estas seguro que deseas eliminar este usuario?');
    if(conf)
       window.location=anchor.attr("href");
 }

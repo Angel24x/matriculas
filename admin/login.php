@@ -79,7 +79,8 @@ if(isset($_SESSION['user_login'])){
 				    </div>
 				  </div>
 				  <div class="text-center">
-				      <button type="submit" name="login" class="btn btn-warning">Ingresar</button>
+				  		<button type="button" name="devolver" class="btn btn-danger"><a class="text-white" style="text-decoration: none" href="../index.php">Regresar</a></button>
+				    	<button type="submit" name="login" class="btn btn-warning">Ingresar</button>
 				    </div>
 				    <p>Si aún no tienes una cuenta de usuario, <a href="register.php">Registrarte acá</a></p>
 				  </div>

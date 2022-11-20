@@ -123,7 +123,8 @@
 				    </div>
 				  </div>
 				  <div class="text-center"><br><br>
-				      <button type="submit" name="register" class="btn btn-danger">Registro</button>
+				  		<button type="button" name="devolver" class="btn btn-danger"><a class="text-white" style="text-decoration: none" href="login.php">Regresar</a></button>
+				    	<button type="submit" name="register" class="btn btn-primary">Registro</button>
 				    </div>
 				  </div>
 				</form>

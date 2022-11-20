@@ -16,9 +16,8 @@
   </ol>
 </nav>
 <?php if(isset($_GET['delete']) || isset($_GET['edit'])) {?>
-  <div role="alert" aria-live="assertive" aria-atomic="true" class="toast fade" data-autohide="true" data-animation="true" data-delay="2000">
+  <div id="toast" role="alert" aria-live="assertive" aria-atomic="true" class="toast fade" data-autohide="true" data-animation="true" data-delay="2000">
     <div class="toast-header">
-      <strong class="mr-auto">Insertar Estudiantes</strong>
       <small><?php echo date('d-M-Y'); ?></small>
       <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -66,6 +65,8 @@
       <th scope="col">SL</th>
       <th scope="col">Nombre</th>
       <th scope="col">Sexo</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Representante</th>
       <th scope="col">Matrícula</th>
       <th scope="col">Dirección</th>
       <th scope="col">Contacto</th>
@@ -94,6 +95,8 @@
       echo '<td>'.$i.'</td>
           <td>'.ucwords($result['name']).'</td>
           <td>'.$sexo.'</td>
+          <td>'.$result['edad'].'</td>
+          <td>'.$result['representante'].'</td>
           <td>'.$result['roll'].'</td>
           <td>'.ucwords($result['city']).'</td>
           <td>'.$result['pcontact'].'</td>
@@ -112,6 +115,7 @@
   </tbody>
 </table>
 <script type="text/javascript">
+  
   function confirmationDelete(anchor)
 {
    var conf = confirm('Estás seguro que deseas eliminar este registro, esta opción es irreversible');

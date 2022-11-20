@@ -8,7 +8,7 @@
      }
     }
     
-    $id = base64_decode($_GET['id']);
+    $id = $_GET['id'];
   if (isset($_POST['userupdate'])) {
   	$name = $_POST['name'];
   	$email = $_POST['email'];
